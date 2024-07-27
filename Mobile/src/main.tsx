@@ -22,8 +22,11 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 setupIonicReact();
 
-const App: React.FC = () => (
-  <IonApp>
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
+  <React.StrictMode>
+    <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
         <Route exact path="/home">
@@ -35,12 +38,5 @@ const App: React.FC = () => (
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
-);
-
-const container = document.getElementById('root');
-const root = createRoot(container!);
-root.render(
-  <React.StrictMode>
-    <App />
   </React.StrictMode>
 );
