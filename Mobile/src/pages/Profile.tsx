@@ -14,11 +14,9 @@ const PanelButtons = styled.div`
 
 export default function Profile() {
     const nav = useIonRouter();
-    const [state, setState] = useState<string>();
-    
+
     const Change = ()=>{
-        if (state == '') setState('Отредактировано')
-        else setState('');
+        alert("Изменения успешно внесены!");
     }
 
     return (
@@ -31,7 +29,6 @@ export default function Profile() {
             <IonContent>
                 <IonText>Настройки</IonText>
                 <PanelButtons>
-                    <IonText>{state}</IonText>
                     <IonButton color="secondary" onClick={Change}>Редактировать</IonButton>
                     <IonButton onClick={()=>nav.goBack()}>На главную</IonButton>
                 </PanelButtons>
