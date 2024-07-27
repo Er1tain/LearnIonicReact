@@ -1,8 +1,19 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonPage, IonTitle, IonToolbar, useIonRouter } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import styled from 'styled-components';
+
+const PanelButtons = styled.div`
+    display: flex;
+    flex-direction: column;
+`
 
 const Home: React.FC = () => {
+  const nav = useIonRouter()
+
+  const NavToProfile = ()=>{
+    nav.push('/profile');
+  }
+
   return (
     <IonPage>
       <IonHeader>
@@ -16,7 +27,10 @@ const Home: React.FC = () => {
             <IonTitle size="large">Blank</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer />
+        {/* <ExploreContainer /> */}
+        <PanelButtons>
+          <IonButton onClick={()=>NavToProfile()}>Профиль</IonButton>
+        </PanelButtons>
       </IonContent>
     </IonPage>
   );
