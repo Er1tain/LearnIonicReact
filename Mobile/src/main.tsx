@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Home from './pages/Home';
+import Home from './pages/Welcome';
 
 import '@ionic/react/css/core.css';
 
@@ -19,7 +19,10 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 import '@ionic/react/css/palettes/dark.system.css';
-import Profile from './pages/Profile';
+import Profile from './pages/Reg';
+import Welcome from './pages/Welcome';
+import Reg from './pages/Reg';
+import Auth from './pages/Auth';
 
 setupIonicReact();
 
@@ -30,14 +33,20 @@ root.render(
     <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
+        <Route exact path="/welcome">
+          <Welcome/>
         </Route>
+
         <Route exact path="/">
-          <Redirect to="/home" />
+          <Redirect to="/welcome " />
         </Route>
-        <Route exact path="/profile">
-          <Profile/>
+
+        <Route exact path="/reg">
+          <Reg/>
+        </Route>
+
+        <Route exact path="/auth"> 
+          <Auth/>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
